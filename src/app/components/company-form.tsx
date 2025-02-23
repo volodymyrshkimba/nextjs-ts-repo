@@ -36,14 +36,19 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
         <div className="flex gap-6">
           <div className="flex flex-col flex-1 gap-5">
             <LogoUploader label="Logo" placeholder="Upload photo" />
-            <InputField label="Status" placeholder="Status" name="status" />
-            <InputField label="Country" placeholder="Country" name="country" />
+            <InputField label="Status" placeholder="Status" name="status" id="status" />
+            <InputField label="Country" placeholder="Country" name="country" id="country" />
           </div>
           <div className="flex flex-col flex-1 gap-5">
-            <InputField label="Name" placeholder="Name" name="name" />
-            <InputField label="Category" placeholder="Category" name="category" />
-            <InputField label="Joined date" type="date" name="date" />
-            <InputField label="Description" placeholder="Description" name="description" />
+            <InputField label="Name" placeholder="Name" name="name" id="name" />
+            <InputField label="Category" placeholder="Category" name="category" id="category" />
+            <InputField label="Joined date" type="date" name="date" id="date" />
+            <InputField
+              label="Description"
+              placeholder="Description"
+              name="description"
+              id="description"
+            />
           </div>
         </div>
         <Button type="submit">Add company</Button>
