@@ -1,5 +1,5 @@
-const getCountById = <T extends string, I extends Record<T, string>>(items: I[], idKey: T) =>
-  items.reduce(
+const getCountById = <T extends string, I extends Record<T, string>>(items: I[], idKey: T) => {
+  return items.reduce(
     (counts, { [idKey]: id }) => {
       if (!counts[id]) counts[id] = 0;
       counts[id] += 1;
@@ -7,5 +7,5 @@ const getCountById = <T extends string, I extends Record<T, string>>(items: I[],
     },
     {} as Record<string, number>,
   );
-
+};
 export default getCountById;
