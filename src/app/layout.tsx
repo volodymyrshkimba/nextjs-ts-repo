@@ -5,6 +5,13 @@ import Providers from './components/providers';
 
 const font = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
+export const metadata = {
+  title: 'TruScape',
+  icons: {
+    icon: '/favicon.png',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
