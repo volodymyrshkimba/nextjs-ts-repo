@@ -58,8 +58,8 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
   const handleSubmit = async (values: CompanyFieldValues) => {
     await mutateAsync({
       ...values,
-      categoryTitle: categories.find(({ id }) => id === values.categoryId)?.title ?? '',
-      countryTitle: countries.find(({ id }) => id === values.countryId)?.title ?? '',
+      categoryTitle: categories?.find(({ id }) => id === values.categoryId)?.title ?? '',
+      countryTitle: countries?.find(({ id }) => id === values.countryId)?.title ?? '',
     });
 
     if (onSubmit) {
@@ -77,7 +77,7 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             <InputField required label="Status" placeholder="Status" name="status" as="select">
               {(Object.values(CompanyStatus) as CompanyStatus[]).map((status) => (
                 <option key={status} value={status}>
-                  <StatusLabel status={status} styled={false} />
+                  <StatusLabel status={status} />
                 </option>
               ))}
             </InputField>

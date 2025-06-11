@@ -1,16 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { use } from 'react';
 import PromotionForm from '@/app/components/promotion-form';
 
-export interface PageProps {
-  params: { id: string };
-}
+export default function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
 
-export default function Page({ params }: PageProps) {
   return (
     <div className="py-6 px-10">
-      <PromotionForm companyId={params.id} />
+      <PromotionForm companyId={id} />
     </div>
   );
 }

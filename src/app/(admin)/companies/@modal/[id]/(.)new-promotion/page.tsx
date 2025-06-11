@@ -1,14 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { use } from 'react';
 import { useRouter } from 'next/navigation';
 import PromotionFormModal from '@/app/components/promotion-form-modal';
 
-export interface PageProps {
-  params: { id: string };
-}
+export default function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
 
-export default function Page({ params }: PageProps) {
   const router = useRouter();
-  return <PromotionFormModal companyId={params.id} show={true} onClose={() => router.back()} />;
+  return <PromotionFormModal companyId={id} show={true} onClose={() => router.back()} />;
 }

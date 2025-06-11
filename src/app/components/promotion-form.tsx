@@ -80,7 +80,7 @@ export default function PromotionForm({ companyId, onSubmit }: PromotionFormProp
             placeholder="Discount"
             name="discount"
           />
-          <LogoUploader square label="Image" placeholder="Upload photo" />
+          <LogoUploader label="Image" placeholder="Upload photo" />
         </div>
         <Button type="submit" disabled={isPending}>
           Add promotion

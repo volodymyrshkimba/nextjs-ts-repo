@@ -5,6 +5,7 @@ import React from 'react';
 
 export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  as?: string;
 }
 
 export default function InputField({ label, id, ...rest }: InputFieldProps) {
